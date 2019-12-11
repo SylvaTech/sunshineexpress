@@ -67,35 +67,34 @@ require_once('Models/User.class.php');
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title">Add Staff Details</h4>
+            <h4 class="modal-title">Add User Details</h4>
           </div>
           <div class="modal-body">
-          <form  method = "post" action = "user_handler.php">
+          <form  method = "post" action = "controllers/user_controller.php">
             <div class="container row">
-              <div class="col-md-6">
+              <div class="col-md-6"> 
                 <div class="form-group">
-                    <span>Name of Staff:</span>
+                    <span>Name:</span>
                     <input type="text" class="form-control form-control-user" name="name" value = "" required>
                   </div>
                   <div class="form-group">
                     <span>Email:</span>
                     <input type="email" class="form-control form-control-user" name="email" value= "" required>
-                  </div> 
-                  <div class="form-group">
-                    <span>Address:</span>
-                    <input type = "text" class="form-control form-control-user"  name = "address" required>
-                  </div> 
-              </div>
-              <div class="col-md-6">
+                  </div>
                   <div class="form-group">
                     <span>Rank:</span>
                     <select type="select" class="form-control form-control-user" name="rank" required>
-                      <option value = "" disabled selected>Select Staff Rank</option>
-                      <option value = "Manager">Manager</option>
-                      <option value = "Accountant">Accountant</option>
-                      <option value = "Operations Staff">Operations Staff</option>
+                      <option value = "" disabled selected>Select Rank</option>
+                      <option value = "admin">Admin</option>
+                      <option value = "user">User</option>
                     </select>
                   </div>
+                  <!-- <div class="form-group">
+                    <span>Address:</span>
+                    <input type = "text" class="form-control form-control-user"  name = "address" required>
+                  </div>  -->
+              </div>
+              <div class="col-md-6">
                   <div class="form-group">
                     <span>Phone:</span>
                     <input type = "number" class="form-control form-control-user" name = "phone" required>

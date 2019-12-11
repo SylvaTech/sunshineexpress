@@ -125,13 +125,13 @@
 			if($stmt->execute()){
 
 				$_SESSION['success'] = "Registration successful";
-				// redirect('index.php');
+				redirect('register.php');
 			}
 
 		}
 		catch(Exception $ex){
-			$_SESSION['error'] = $ex->getMessage();
-			// redirect('index.php');
+			$_SESSION['error'] = "User Registration failed please check the accuracy of information entered";
+			redirect('register.php');
 		}
 	}
 ?>

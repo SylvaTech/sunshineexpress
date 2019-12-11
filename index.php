@@ -57,6 +57,21 @@
 				        </ul>
 				      </nav><!-- #nav-menu-container -->		    		
 			    	</div>
+			    	<div class="row">
+			    		<div class="col-md-4"></div>
+			    		<div class="col-md-6">
+			    			<?php 
+			                 if (isset($_SESSION['error']) && !empty($_SESSION['error'])){
+			                  echo errorMessage($_SESSION['error']);
+			                  $_SESSION['error'] = "";
+			                 }
+			                 elseif(isset($_SESSION['success']) && !empty($_SESSION['success'])){
+			                  echo successMessage($_SESSION['success']);
+			                  $_SESSION['success'] = "";
+			                 }
+			              ?> 
+			    		</div>
+			    	</div>
 			    </div>
 			  </header><!-- #header -->
 
@@ -106,16 +121,16 @@
   <!-- The slideshow -->
   <div class="carousel-inner">
     <div class="carousel-item active" >
-      <img src="img/img1.jpg" alt="Los Angeles" width="100%" height="625">
+      <img src="img/slider1.png" alt="Bus image" width="100%" height="625">
     </div>
     <div class="carousel-item">
-      <img src="img/img2.jpg" alt="Chicago" width="100%" height="625">
+      <img src="img/slider2.png" alt="Bus image " width="100%" height="625">
     </div>
     <div class="carousel-item">
-      <img src="img/img3.jpg" alt="New York" width="100%" height="625">
+      <img src="img/slider3.png" alt="Bus image" width="100%" height="625">
     </div>
     <div class="carousel-item">
-      <img src="img/img4.jpg" alt="New York" width="100%" height="625">
+      <img src="img/slider4.png" alt="Bus image" width="100%" height="625">
     </div>
   </div>
   
@@ -251,7 +266,7 @@
 								  <td>Edo </td>
 								  <td>Ekiti </td>
 								  <td>Enugu</td>
-								  <td>Federal Capital Territory</td>
+								  <td>FCT Abuja</td>
 								</tr>
 
 								<tr>

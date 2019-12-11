@@ -12,9 +12,7 @@
 		$id = $_POST['user_id'];
 		$name = $_POST['name'];
 		$email = $_POST['email'];
-		$address = $_POST['address'];
 		$phone = $_POST['phone'];
-		$rank = $_POST['rank'];
 		$rank = $_POST['rank'];
 		$fetchedEmail = $_POST['fetched_email'];
 		$time_updated = date("Y-m-d H:i:s");
@@ -35,7 +33,7 @@
 				redirect("manage-users.php");
 			}
 		}
-		$query = "UPDATE " .DB_PREFIX."users SET name = :name, email = :email, phone = :phone, role = :rank, address = :address, updated_at = :time_updated WHERE id = :id";
+		$query = "UPDATE " .DB_PREFIX."users SET name = :name, email = :email, phone = :phone, rank = :rank,updated_at = :time_updated WHERE id = :id";
 
 		$stmt = $con->prepare($query);
 		$stmt->bindValue(":id",$id);
@@ -43,12 +41,11 @@
 		$stmt->bindValue(":email",$email);
 		$stmt->bindValue(":phone",$phone);
 		$stmt->bindValue(":rank",$rank);
-		$stmt->bindValue(":address",$address);
 		$stmt->bindValue(":time_updated",$time_updated);
 
 		if($stmt->execute()){
 			$_SESSION["success"] = "User information updated";
-			redirect("manage-users.php");
+			redirect("../manage-users.php");
 		}
 	}
 
@@ -88,14 +85,13 @@
 				}
 				else{
 					$_SESSION['error'] = "Sorry Username or Password is incorrect Please verify.";
-					echo "I am here in the error zone";
-					//redirect("../../index.php");
+					redirect("../../index.php");
 				}
 			}						
 			else{
 				$_SESSION['error'] = "Sorry Username or Password is incorrect Please verify.";
-				// redirect("index.php");
-				echo "I am here in the error zone";
+				redirect("../../index.php");
+				
 			}
 		}
 		catch(Exception $ex){
@@ -105,17 +101,18 @@
 		}
 		
 	}
-	//Add User
+	//User Registration
 	if(isset($_POST['reg_customer'])){
 		$name 			= 	$_POST['name'];
 		$email 			= 	$_POST['email'];
 		$phone 			= 	$_POST['phone'];
+		$rank 			= 	"user";
 		$password 		= 	$_POST['password'];
 		$password 		= 	password_hash($password,PASSWORD_DEFAULT);
 		$date			=	date("Y:m:d H:i:s");
 	
 		
-		$query =  "INSERT INTO ". DB_PREFIX. "users(name,email,phone,address,created_at)VALUES(:name,:email,:phone,:address,:created_at)";
+		$query =  "INSERT INTO ". DB_PREFIX. "users(name,email,phone,rank,created_at)VALUES(:name,:email,:phone,:rank,:created_at)";
 
 		try{
 			$stmt = $con->prepare($query);
@@ -123,20 +120,53 @@
 			$stmt->bindValue(":name", $name);
 			$stmt->bindValue(":email", $email);
 			$stmt->bindValue(":phone", $phone);
-			$stmt->bindValue(":role", $role);
-			$stmt->bindValue(":address", $address);
+			$stmt->bindValue(":rank", $rank);
 			$stmt->bindValue(":date_created", $date);
 
 			if($stmt->execute()){
 
-				$_SESSION['success'] = "User Added Successfully";
-				redirect('manage-users.php');
+				$_SESSION['success'] = "Thank you for choosing Adamawa Sunshine Express. You can now login yo enjoy our services";
+				redirect('../../index.php');
 			}
 
 		}
 		catch(Exception $ex){
 			$_SESSION['error'] = $ex->getMessage();
 			redirect('manage-users.php');
+		}
+	}
+	//Admin Registration
+	if(isset($_POST['addUser'])){
+		$name 			= 	$_POST['name'];
+		$email 			= 	$_POST['email'];
+		$phone 			= 	$_POST['phone'];
+		$rank 			= 	$_POST['rank'];
+		$password 		= 	$_POST['password'];
+		$password 		= 	password_hash($password,PASSWORD_DEFAULT);
+		$date			=	date("Y:m:d H:i:s");
+	
+		
+		$query =  "INSERT INTO ". DB_PREFIX. "users(name,email,phone,rank,created_at)VALUES(:name,:email,:phone,:rank,:date_created)";
+
+		try{
+			$stmt = $con->prepare($query);
+
+			$stmt->bindValue(":name", $name);
+			$stmt->bindValue(":email", $email);
+			$stmt->bindValue(":phone", $phone);
+			$stmt->bindValue(":rank", $rank);
+			$stmt->bindValue(":date_created", $date);
+
+			if($stmt->execute()){
+
+				$_SESSION['success'] = "User Added Successfully";
+				redirect('../manage-users.php');
+			}
+
+		}
+		catch(Exception $ex){
+			$_SESSION['error'] = $ex->getMessage();
+			redirect('../manage-users.php');
 		}
 	}
 

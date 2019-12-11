@@ -21,6 +21,7 @@
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="img/logo.png" rel="icon">
   <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
    
 
@@ -55,11 +56,10 @@
 
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
       <!-- Sidebar - Brand -->
-      <div id="logo" class="" style = "margin-top: 20px;">
+      <div id="logo" class="" style = "margin-top: 2px;">
           <!-- <a href="index.php">Adamawa<small>Sunshine</small></a> -->
-          <a href="index.php"><img src="img/logo.png" alt="Sunshine Express"/></a>
+          <a href="dashboard.php"><img src="img/logo.png" alt="Sunshine Express" class = "img-fluid"/></a>
       </div>
       
       <!-- Nav Item - Dashboard -->
@@ -77,7 +77,7 @@
           <span>Profile</span></a>
       </li>
     <?php 
-      if($_SESSION['role'] === "customer"){ ?>
+      if($_SESSION['role'] === "user"){ ?>
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
@@ -86,20 +86,20 @@
           <span>My tickets</span></a>
       </li>
 
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="search-journey.php">
           <i class="fas fa-fw fa-bus"></i>
           <span>Search Journey</span></a>
-      </li>
+      </li> -->
 
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="book-bus.php">
           <i class="fas fa-fw fa-globe"></i>
           <span>Book Bus</span></a>
-      </li>
+      </li> -->
       <li class="nav-item">
-        <a class="nav-link" href="book-bus.php">
-          <i class="fas fa-fw fa-globe"></i>
+        <a class="nav-link" href="give-feedback.php">
+          <i class="fas fa-fw fa-comments"></i>
           <span>Give Feedback</span></a>
       </li>
 
@@ -129,7 +129,7 @@
           <span>Manage Booking</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="manage-review.php">
+        <a class="nav-link" href="manage-feedback.php">
           <i class="fas fa-fw fa-comments"></i>
           <span>Manage Feedbacks</span></a>
       </li>

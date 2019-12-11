@@ -57,6 +57,7 @@
                   <hr>
                   <div class="text-center">
                     <a class="small" href="forgot-password.php">Forgot Password?</a>
+                    <a class="small" href="../index.php">Go Home</a>
                   </div>
                 </div>
               </div>

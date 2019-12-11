@@ -28,8 +28,8 @@ if(isset($_GET['edu'])){
     foreach($theUser as $fetchedUser){
       $name = $fetchedUser['name'];
       $email = $fetchedUser['email'];
-      $address = $fetchedUser['address'];
-      $rank = $fetchedUser['role'];
+      // $address = $fetchedUser['address'];
+      $rank = $fetchedUser['rank'];
       $phone = $fetchedUser['phone'];
       //$password = $fetchedUser['password'];
     }
@@ -42,12 +42,12 @@ if(isset($_GET['edu'])){
   <div class="card-header">
     <h3 class="card-title text-primary head-h2">Edit User Information</h3>
   </div>
-      <form  method = "post" action = "user_handler.php">
+      <form  method = "post" action = "controllers/user_controller.php">
       <div class = "row container-fluid card-body">
         <div class="col-md-6">
           <div class="form-group">
             <input type = "hidden" name = "user_id" value = "<?php echo $id; ?>">
-            <span>Name of Staff:</span>
+            <span>Name:</span>
             <input type="text" class="form-control form-control-user" name="name" value = "<?php echo $name; ?>" required>
           </div>
           <div class="form-group">
@@ -56,20 +56,20 @@ if(isset($_GET['edu'])){
             <input type="email" class="form-control form-control-user" name="email" value = "<?php echo $email; ?>" required>
           </div> 
           <div class="form-group">
-            <span>Address:</span>
-            <input type = "text" class="form-control form-control-user"  name = "address" value = "<?php echo $address; ?>" required>
-          </div> 
-          </div><!-- Closing col-6 -->
-          <div class="col-md-6">
-            <div class="form-group">
               <span>Rank:</span>
               <select type="select" class="form-control form-control-user" name="rank" required>
-                <option value = "<?php echo isset($rank)?$rank : '';?>" selected><?php echo isset($rank)?$rank: 'Select Staff Rank'?></option>
+                <option value = "<?php echo isset($rank)?$rank : '';?>" selected><?php echo isset($rank)?$rank: 'Select Rank'?></option>
                 <option value = "Manager">Manager</option>
                 <option value = "Accountant">Accountant</option>
                 <option value = "Operations Staff">Operations Staff</option>
               </select>
             </div>
+          <!-- <div class="form-group">
+            <span>Address:</span>
+            <input type = "text" class="form-control form-control-user"  name = "address" value = "<?php echo $address; ?>" required>
+          </div>  -->
+          </div><!-- Closing col-6 -->
+          <div class="col-md-6">
             <div class="form-group">
               <span>Phone:</span>
               <input type = "number" class="form-control form-control-user" name = "phone" value = "<?php echo $phone; ?>" required>

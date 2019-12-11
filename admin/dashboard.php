@@ -162,7 +162,9 @@
                           $journey = new Journey();
                         $journeys = $journey->getAllInterJourneys();
                         //var_dump($journeys);
+                        $sn = 0;
                         foreach($journeys as $jony){
+                          $sn++;
                           $id = $jony['j_id'];
                           $from = $jony['from_destination'];
                           $to = $jony['to_destination'];
@@ -174,7 +176,7 @@
                           $fare = $jony['fare'];
                     ?>
                     <tr>
-                      <td><?php echo $id;?></td>
+                      <td><?php echo $sn;?></td>
                       <td><?php echo $from; ?></td>
                       <td><?php echo $to; ?></td>
                       <td><?php echo $bus_type; ?></td>
@@ -203,7 +205,9 @@
                         $journey = new Journey();
                         $journeys = $journey->getAllInterJourneys();
                         //var_dump($journeys);
+                        $sn = 0;
                         foreach($journeys as $jony){
+                          $sn++;
                           $id = $jony['j_id'];
                           $from = $jony['from_destination'];
                           $to = $jony['to_destination'];
@@ -215,7 +219,7 @@
                           $fare = $jony['fare'];
                     ?>
                     <tr>
-                      <td><?php echo $id;?></td>
+                      <td><?php echo $sn;?></td>
                       <td><?php echo $from; ?></td>
                       <td><?php echo $to; ?></td>
                       <td><?php echo $bus_type; ?></td>

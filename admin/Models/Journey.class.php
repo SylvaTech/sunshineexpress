@@ -6,12 +6,9 @@
       global $con;
       $inter = "1";
      // $query =  "SELECT * FROM ". DB_PREFIX. "journeys WHERE j.bus_type = interstate = :inter AND journey_status = :inter";
-      $query = "SELECT ". DB_PREFIX. "journeys.*,". DB_PREFIX. "bus_types.* FROM ". DB_PREFIX. "journeys INNER JOIN ". DB_PREFIX. "bus_types ON ". DB_PREFIX."journeys.bus_type = ". DB_PREFIX. "bus_types.bt_id ";
+      $query = "SELECT ". DB_PREFIX. "journeys.*,". DB_PREFIX. "bus_types.* FROM ". DB_PREFIX. "journeys INNER JOIN ". DB_PREFIX. "bus_types ON ". DB_PREFIX."journeys.bus_type = ". DB_PREFIX. "bus_types.bt_id WHERE sunshine_journeys.interstate = 1";
       try{
-        $stmt = $con->prepare($query);
-
-        $stmt->bindValue(":inter", $inter);
-        
+        $stmt = $con->prepare($query);        
         $stmt->execute();
         $journeys = $stmt->fetchAll();
 
@@ -23,7 +20,26 @@
         $_SESSION['error'] = $ex->getMessage();
         // redirect('dashboard.php');
       }
-    }//Get all interstate Journeys
+    }
+    function getAllIntraJourneys(){
+      global $con;
+      $inter = "1";
+     // $query =  "SELECT * FROM ". DB_PREFIX. "journeys WHERE j.bus_type = interstate = :inter AND journey_status = :inter";
+      $query = "SELECT ". DB_PREFIX. "journeys.*,". DB_PREFIX. "bus_types.* FROM ". DB_PREFIX. "journeys INNER JOIN ". DB_PREFIX. "bus_types ON ". DB_PREFIX."journeys.bus_type = ". DB_PREFIX. "bus_types.bt_id WHERE sunshine_journeys.interstate = 0";
+      try{
+        $stmt = $con->prepare($query);        
+        $stmt->execute();
+        $journeys = $stmt->fetchAll();
+
+        if(count($journeys)>=1){
+          return $journeys;
+        }
+      }
+      catch(Exception $ex){
+        $_SESSION['error'] = $ex->getMessage();
+        // redirect('dashboard.php');
+      }
+    }
     function getJouneyDetails($j_id){
       global $con;
       $inter = "1";

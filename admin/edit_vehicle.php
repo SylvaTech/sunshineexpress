@@ -2,25 +2,6 @@
 include "includes/header.php"; 
 include "includes/inner-header.php";
 require_once('Models/Vehicle.class.php');
-require_once('Models/Driver.class.php');
-
-//Delete Vehicle
- if (isset($_GET['de'])){
-    $id = $_GET['de'];
-    $query = "DELETE FROM ".DB_PREFIX."vehicles WHERE id = :id";
-    $stmt = $con->prepare($query);
-    try{
-      $stmt->bindValue(':id',$id);
-      if($stmt->execute()){
-        $_SESSION['success'] = "Vehicle removed";
-        redirect('vehicles.php');
-      }
-    }
-    catch(Exception $ex){
-      $_SESSION['error'] = $ex->getMessage();
-      redirect("vehicles.php");
-    }
-  }
 
 if(isset($_GET['ed'])){
   $id = $_GET['ed'];
@@ -30,72 +11,47 @@ if(isset($_GET['ed'])){
   
   if(is_array($theVehicle)){
     foreach($theVehicle as $veh){
-      $veh_num = $veh['vehicle_number'];
-      $veh_type = $veh['vehicle_type'];
-      $veh_cap = $veh['vehicle_capacity'];
-      $veh_status = $veh['vehicle_status'];
-      $vehicle_driver = $veh['name'];
-      $driver_id = $veh['vehicle_driver'];
-
-      $drivers = Driver::getAllDrivers();
-
+      $veh_num = $veh['bus_number'];
+      $veh_type = $veh['bus_type'];
     }
   }
 }
 
 ?>
-      
 <div class="card shadow">
   <div class="card-header">
     <h3 class="card-title text-primary head-h2">Edit Vehicle Information</h3>
   </div>
-      <form  method = "post" action = "vehicle_handler.php">
+      <form  method = "post" action = "controllers/vehicle_controller.php">
       <div class = "row container-fluid card-body">
-        <div class="col-md-6">
+        <div class="col-md-8">
           <div class="form-group">
             <input type = "hidden" name = "veh_id" value = "<?php echo $id; ?>">
-            <span>Vehicle Number:</span>
+            <span>Bus Number:</span>
             <input type="text" class="form-control" name="veh_num" value = "<?php echo $veh_num; ?>" required>
           </div>
           <div class="form-group">
-            <span>Vehicle Type:</span>
+            <span>Bus Type:</span>
             <input type="text" class="form-control" name="veh_type" value = "<?php echo $veh_type; ?>" required>
           </div> 
-          <div class="form-group">
-            <span>Total Seats:</span>
-            <input type = "number" class="form-control"  name = "veh_cap" value = "<?php echo $veh_cap; ?>" required>
-          </div> 
-          </div><!-- Closing col-6 -->
-          <div class="col-md-6">
-            <div class="form-group">
-              <span>Driver:</span>
-              <select type="select" class="form-control" name="veh_driver" required>
-                <option value = "<?php echo isset($driver_id)?$driver_id : '';?>" selected><?php echo isset($vehicle_driver)?$vehicle_driver: 'Select Driver'?></option>
-                <?php
-                foreach($drivers as $driver){
-                  $d_id = $driver['id'];
-                  $driver_name = $driver['name'];
-                ?>
-                <option value = "<?php echo $d_id; ?>"><?php echo $driver_name;?></option>
-                
-                <?php
-                }
-                ?>
-              </select>
-            </div>
-            <div class="form-group">
-              <span>Vehicle Status:</span>
-              <select class="form-control" name = "veh_status" required>
-                <option value = "<?php echo $veh_status ?>"><?php echo isset($veh_status)?$veh_status:'Change the status of the vehicle' ?></option>
-                <option value = "Available">Available</option>
-                <option value = "Unavailable">Unavailable</option>
-              </select>
-            </div>
-            <div class="card-footer">
-              <a href="vehicles.php" class="btn btn-danger">Cancel</a>
-              <button class="btn btn-success" name = "updateVehicle">Update</button>
-          </div>
-        </div><!-- Closing col-6 -->
+          <!-- <div class="form-group">
+            <span>Vehicle Type:</span>
+            <select class="form-control" name="veh_type" value= "" required>
+              <option value="" hidden>Select Vehicle Type</option>
+              <?php foreach ($vehicle_types as $vehType){ ?>
+                <option value="<?php echo $vehType['bt_id'];?>"><?php echo $vehType['BusType'];?></option>
+              <?php
+              }
+              ?>
+
+            </select>
+          </div>  -->
+
+          <div class="card-footer">
+            <a href="vehicles.php" class="btn btn-danger">Cancel</a>
+            <button class="btn btn-success" name = "updateVehicle">Update</button>
+        </div>
+        </div><!-- Closing col-8 -->
 
       </div>
     </div><!-- Closing row -->

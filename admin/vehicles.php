@@ -15,6 +15,7 @@
               <?php
                 $vehicle = new Vehicle();
                 $vehicles = $vehicle->getAllVehicles();
+                $vehicle_types = $vehicle->getAllVehicleTypes();
               ?>
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
@@ -28,12 +29,12 @@
 
                 <tbody>
                   <?php
-                  //var_dump($vehicles);
+                  // var_dump($vehicles);
                   foreach($vehicles as $vehicle){
-                    // $v_id = $vehicle[];
+                    $v_id = $vehicle['id'];
                     $number = $vehicle['bus_number'];
-                    $type = $vehicle['total_seat'];
-                    $seat = $vehicle['bus_type'];
+                    $type = $vehicle['TotalSeat'];
+                    $seat = $vehicle['BusType'];
                     
                   ?>
                   <tr>
@@ -63,7 +64,7 @@
             <h4 class="modal-title">Add Vehicle</h4>
           </div>
           <div class="modal-body">
-          <form  method = "post" action = "vehicle_handler.php">
+          <form  method = "post" action = "controllers/vehicle_controller.php">
             <div class="container row">
               <div class="col-md-12">
                 <div class="form-group">
@@ -72,28 +73,16 @@
                   </div>
                   <div class="form-group">
                     <span>Vehicle Type:</span>
-                    <input type="text" class="form-control form-control-user" name="veh_type" value= "" required>
-                  </div> 
-                  <div class="form-group">
-                    <span>Total Seats:</span>
-                    <input type = "number" min = "5" class="form-control form-control-user"  name = "veh_cap" required>
-                  </div> 
-                  <div class="form-group">
-                    <span>Vehicle's Driver:</span>
-                    <select type="select" class="form-control form-control-user" name="veh_driver" required>
-                      <option value = "" disabled selected>Select Driver</option>
-                      <?php foreach($drivers as $driver){
-                        $driver_id = $driver['id'];
-                        $driver_name = $driver['name'];
-                      ?>
-                      <option value = "<?php echo $driver_id; ?>"><?php echo $driver_name; ?></option>
-                      
+                    <select class="form-control" name="veh_type" value= "" required>
+                      <option value="" hidden>Select Vehicle Type</option>
+                      <?php foreach ($vehicle_types as $vehType){ ?>
+                        <option value="<?php echo $vehType['bt_id'];?>"><?php echo $vehType['BusType'];?></option>
                       <?php
                       }
                       ?>
-                      
+
                     </select>
-                  </div>
+                  </div> 
                 </div>
               </div>
             </div>
@@ -122,7 +111,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
-        <a href="<?php echo 'edit_driver.php?de='.$d_id; ?>" class="btn btn-success" onclick="myFunction1()">Delete</a>
+        <a href="<?php echo 'controllers/vehicle_controller.php?de='.$v_id; ?>" class="btn btn-success" onclick="myFunction1()">Delete</a>
       </div>
     </div>
 

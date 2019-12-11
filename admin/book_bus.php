@@ -178,19 +178,23 @@ else if (isset($_POST['proceed'])){
         <div class="col-md-6">
           <div class="form-group">
               <span>Passenger Name:</span>
-              <input type="text" class="form-control form-control-user" name="pname" value = "<?php echo $p_name;?>" required>
+              <input type="text" disabled class="form-control form-control-user" name="pname" value = "<?php echo $p_name;?>" required>
+              <input type="hidden" class="form-control form-control-user" name="pname" value = "<?php echo $p_name;?>" required>
             </div>
             <div class="form-group">
               <span>Gender:</span>
-              <input name = "pgender" value = "<?php echo $p_gender;?>" class = "form-control">
+              <input type="text" disabled name = "pgender" value = "<?php echo $p_gender;?>" class = "form-control">
+              <input type = "hidden" name = "pgender" value = "<?php echo $p_gender;?>" class = "form-control">
             </div>
             <div class="form-group">
               <span>Phone:</span>
-              <input name = "phone" value = "<?php echo $p_phone;?>" id = "p_phone" class = "form-control">
+              <input type="text" disabled name = "phone" value = "<?php echo $p_phone;?>" id = "p_phone" class = "form-control">
+              <input type = "hidden" name = "phone" value = "<?php echo $p_phone;?>" id = "p_phone" class = "form-control">
             </div>
             <div class="form-group">
               <span>Passenger Address:</span>
-              <input type="text" class="form-control form-control-user" name="paddress" value = "<?php echo $p_address;?>" required>
+              <input type="text" disabled class="form-control form-control-user" name="paddress" value = "<?php echo $p_address;?>" required>
+              <input type="hidden" class="form-control form-control-user" name="paddress" value = "<?php echo $p_address;?>" required>
             </div>
             <div class="form-group">
               <span>Transaction Email:</span>
@@ -216,7 +220,8 @@ else if (isset($_POST['proceed'])){
             </div>
             <div class="form-group">
             <span>Seat number:</span> 
-            <input type = "text" name = "seat" class = "form-control" value="<?php echo $seat;?>" >
+            <input type="text" disabled name = "seat" class = "form-control" value="<?php echo $seat;?>" >
+            <input type = "hidden" name = "seat" class = "form-control" value="<?php echo $seat;?>" >
           </div>
           <div>
             <script src="https://js.paystack.co/v1/inline.js"></script>

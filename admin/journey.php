@@ -3,7 +3,7 @@ require_once "includes/header.php";
 require_once "includes/inner-header.php";
 require_once "Models/Vehicle.class.php";
 require_once "Models/CoveredRoutes.class.php";
-
+require_once("Models/Journey.class.php");
 ?>
 
         <!-- Begin Page Content -->
@@ -35,18 +35,11 @@ require_once "Models/CoveredRoutes.class.php";
                                   <select class="form-control form-control-user" name="bus_type" required>
                                     <option value = "" hidden>Select Bus Type</option>
                                     <?php foreach($vehicleTypes as $vehType){ ?>
-                                      <option value = "<?php echo $vehType['id']?>" ><?php echo $vehType['BusType']?></option>
+                                      <option value = "<?php echo $vehType['bt_id']?>" ><?php echo $vehType['BusType']?></option>
                                     <?php }?>
                                   </select>
 
                                 </div>
-                                <!-- Need to put this as an ajax request -->
-                                <div class="form-group">
-                                    <span>Total Seat:</span>
-                                  <input type = "number" class = "form-control" name = "total_seat">
-                                </div>
-        
-
                                 <div class="form-group">
                                   <span>From:</span>
                                 <select class = "form-control" name = "from_location" required>
@@ -57,7 +50,7 @@ require_once "Models/CoveredRoutes.class.php";
                               
                               <div class="form-group">
                                 <span>To:</span>
-                                <select class = "form-control" name = "to_destination" required>
+                                <select class = "form-control" name = "to_destination" editable="true" required>
                                     <option value="" hidden>To</option>
                                     <?php foreach($sunhineRoutes as $sun_routes){ ?>
                                     <option value="<?php echo $sun_routes['place_name'];?>"><?php echo $sun_routes['place_name'];?></option>
@@ -126,28 +119,50 @@ require_once "Models/CoveredRoutes.class.php";
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Bus Number</th> 
-                      <th>From </th>
+                      <th>S/N</th>
+                      <th>From</th>
                       <th>To</th>
+                      <th>Bus Type</th>                      
                       <th>Departure Time</th>
                       <th>Estimated Arrival Time</th>
                       <th>Fare</th>
-                      <th></th>
-                      <th></th>
+                      <th>Action</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
 
                   <tbody>
+                    <?php
+                      $joni = new Journey();
+                      $interstates = $joni->getAllInterJourneys();
+                      $sn = 0;
+                      foreach($interstates as $joni){
+                        $sn++;
+                        $id = $joni['j_id'];
+                        $from = $joni['from_destination'];
+                        $to = $joni['to_destination'];
+                        $bus_type = $joni['BusType'];
+                        $departure = $joni['departure_time'];
+                        $departure = date('h:i A', strtotime($departure));
+                        $arrival = $joni['est_arrival_time'];
+                        $arrival = date('h:i A', strtotime($arrival));
+                        $fare = $joni['fare'];
+                    ?>
                     <tr>
-                      <td>BAU 1674 BWR</td>
-                      <td>Abuja</td>
-                      <td>Lagos</td>
-                      <td>05-05-2019</td>
-                      <td>5:00 PM</td>
-                      <td>₦4,000</td>
-                      <td><a href="#" class="btn btn-success">view </a></td>
-                      <td><a href="#" class="btn btn-danger">Cancel </a></td>
+                      <td><?php echo $sn;?></td>
+                      <td><?php echo $from; ?></td>
+                      <td><?php echo $to; ?></td>
+                      <td><?php echo $bus_type; ?></td>
+                      <td><?php echo $departure; ?></td>
+                      <td><?php echo $arrival; ?></td>
+                      <td><?php echo $fare; ?></td>
+                      <td><a class="btn btn-primary btn-sm" href="journey.php?j=<?php echo $id;?>">Edit</a></td>
+                      <td><a class="btn btn-danger btn-sm" href="journey.php?jd=<?php echo $id;?>">Delete</a></td>
+                      
                     </tr>
+                    <?php
+                    }
+                    ?>
                   </tbody>
                 </table>
               </div>
@@ -163,28 +178,51 @@ require_once "Models/CoveredRoutes.class.php";
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Bus Number</th> 
-                      <th>From </th>
+                      <th>S/N</th>
+                      <th>From</th>
                       <th>To</th>
+                      <th>Bus Type</th>                      
                       <th>Departure Time</th>
                       <th>Estimated Arrival Time</th>
                       <th>Fare</th>
-                      <th></th>
-                      <th></th>
+                      <th>Action</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
 
+
                   <tbody>
+                    <?php
+                      $intra_joni = new Journey();
+                      $intrastates = $intra_joni->getAllIntraJourneys();
+                      $sn = 0;
+                      foreach($intrastates as $intra){
+                        $sn++;
+                        $id = $intra['j_id'];
+                        $from = $intra['from_destination'];
+                        $to = $intra['to_destination'];
+                        $bus_type = $intra['BusType'];
+                        $departure = $intra['departure_time'];
+                        $departure = date('h:i A', strtotime($departure));
+                        $arrival = $intra['est_arrival_time'];
+                        $arrival = date('h:i A', strtotime($arrival));
+                        $fare = $intra['fare'];
+                    ?>
                     <tr>
-                      <td>BAU 1674 BWR</td>
-                      <td>Abuja</td>
-                      <td>Lagos</td>
-                      <td>05-05-2019</td>
-                      <td>5:00 PM</td>
-                      <td>₦4,000</td>
-                      <td><a href="#" class="btn btn-success">view </a></td>
-                      <td><a href="#" class="btn btn-danger">Cancel </a></td>
+                      <td><?php echo $sn;?></td>
+                      <td><?php echo $from; ?></td>
+                      <td><?php echo $to; ?></td>
+                      <td><?php echo $bus_type; ?></td>
+                      <td><?php echo $departure; ?></td>
+                      <td><?php echo $arrival; ?></td>
+                      <td><?php echo $fare; ?></td>
+                      <td><a class="btn btn-primary btn-sm" href="journey.php?j=<?php echo $id;?>">Edit</a></td>
+                      <td><a class="btn btn-danger btn-sm" href="journey.php?jd=<?php echo $id;?>">Delete</a></td>
+                      
                     </tr>
+                    <?php
+                    }
+                    ?>
                   </tbody>
                 </table>
               </div>

@@ -1,0 +1,612 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"opt",
+				"option\tTag"
+			],
+			[
+				"st",
+				"style\tTag"
+			],
+			[
+				"dele",
+				"deleted_at"
+			],
+			[
+				"ve",
+				"vehType"
+			],
+			[
+				"veh",
+				"vehicle_types"
+			],
+			[
+				"booking_",
+				"booking_details"
+			],
+			[
+				"b",
+				"b_details"
+			],
+			[
+				"journe",
+				"journey_date"
+			],
+			[
+				"j_id",
+				"journey_id"
+			],
+			[
+				"bookin",
+				"booking_id"
+			],
+			[
+				"col-",
+				"col-md-4"
+			],
+			[
+				"creat",
+				"createdAt"
+			],
+			[
+				"pa",
+				"paymentStatus"
+			],
+			[
+				"sea",
+				"seatNo"
+			],
+			[
+				"jour",
+				"journey_id"
+			],
+			[
+				"nok",
+				"nok_phone"
+			],
+			[
+				"nok_",
+				"nok_name"
+			],
+			[
+				"paymen",
+				"payment_status"
+			],
+			[
+				"array_s",
+				"array_shift"
+			],
+			[
+				"journ",
+				"journey_date"
+			],
+			[
+				"jou",
+				"journey_date"
+			],
+			[
+				"max",
+				"maxlength\tAttr"
+			],
+			[
+				"min",
+				"minlength\tAttr"
+			],
+			[
+				"jony",
+				"JonyDate"
+			],
+			[
+				"date",
+				"date_format"
+			],
+			[
+				"p_",
+				"p_address"
+			],
+			[
+				"j_f",
+				"j_fare"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"de",
+				"departure"
+			],
+			[
+				"op",
+				"option\tTag"
+			],
+			[
+				"margin",
+				"margin-top\tproperty"
+			],
+			[
+				"session",
+				"session_start"
+			],
+			[
+				"form",
+				"form-control"
+			],
+			[
+				"inlin",
+				"inline-block\tdisplay"
+			],
+			[
+				"error",
+				"error_reporting"
+			],
+			[
+				"back",
+				"background-size\tproperty"
+			],
+			[
+				"password",
+				"password_hash"
+			],
+			[
+				"passwor",
+				"password_hash"
+			],
+			[
+				"confirm",
+				"Confirm_pass"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"t",
+				"target\tAttr"
+			],
+			[
+				"fig",
+				"figcaption\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 137.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 253.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/xampp/htdocs/CVMS/Models/Finance.class.php",
+		"/C/xampp/htdocs/CVMS/edit_expense.php",
+		"/C/xampp/htdocs/CVMS/finance_handler.php",
+		"/C/xampp/htdocs/CVMS/finances.php",
+		"/C/xampp/htdocs/CVMS/css/sb-admin-2.css",
+		"/C/xampp/htdocs/CVMS/css/sb-admin-2.min.css",
+		"/C/xampp/htdocs/CVMS/vehicle_allocation.php",
+		"/C/xampp/htdocs/CVMS/edit_vehicle.php",
+		"/C/xampp/htdocs/CVMS/dashboard.php",
+		"/C/xampp/htdocs/CVMS/driver_handler.php",
+		"/C/Software_Projects/BusBookingApp/resources/js/components/buses/Buses.vue",
+		"/C/Software_Projects/BusBookingApp/resources/js/components/Dashboard.vue",
+		"/C/xampp/htdocs/CVMS/profile.php",
+		"/C/xampp/htdocs/Sunshine/admin/Models/Booking.class.php",
+		"/C/xampp/htdocs/Sunshine/index.php",
+		"/C/xampp/htdocs/SDAC/viewTithes.php",
+		"/C/xampp/htdocs/Sunshine/admin/Models/Feedback.class.php",
+		"/C/xampp/htdocs/Sunshine/admin/controllers/feedback_controller.php",
+		"/C/xampp/htdocs/Sunshine/admin/give-feedback.php",
+		"/C/xampp/htdocs/Sunshine/admin/includes/header.php",
+		"/C/xampp/htdocs/Sunshine/admin/manage-feedback.php",
+		"/C/xampp/htdocs/Sunshine/admin/css/sb-admin-2.css",
+		"/C/xampp/htdocs/Sunshine/admin/controllers/user_controller.php",
+		"/C/xampp/htdocs/Sunshine/customer_controller.php",
+		"/C/xampp/htdocs/Sunshine/register.php",
+		"/C/xampp/htdocs/Sunshine/admin/reciept.php",
+		"/C/xampp/htdocs/Sunshine/admin/dashboard.php",
+		"/C/xampp/htdocs/Sunshine/admin/manage-booking.php",
+		"/C/Users/SYLVA PC/Desktop/Feedback/formpage.html",
+		"/C/xampp/htdocs/Sunshine/admin/index.php",
+		"/C/xampp/htdocs/Sunshine/admin/forgot-password.php",
+		"/C/xampp/htdocs/Sunshine/admin/includes/inner-header.php",
+		"/C/xampp/htdocs/Sunshine/admin/includes/footer.php",
+		"/C/xampp/htdocs/Sunshine/give-feedback.php",
+		"/C/xampp/htdocs/Sunshine/admin/logout.php",
+		"/C/xampp/htdocs/Sunshine/admin/includes/functions.php",
+		"/C/xampp/htdocs/Sunshine/admin/edit_user.php",
+		"/C/xampp/htdocs/Sunshine/admin/manage-users.php",
+		"/F/python/Nownow.py",
+		"/C/Users/SYLVA PC/Desktop/Python/Emmy_Engine.py",
+		"/C/xampp/htdocs/Sunshine/admin/match_fixing.php",
+		"/C/xampp/htdocs/match/Fixture.php",
+		"/C/xampp/htdocs/match/example.php",
+		"/C/xampp/htdocs/Sunshine/admin/journey.php",
+		"/C/Users/SYLVA PC/Desktop/CSC_506_Practicals/assets/css/style.css",
+		"/C/Users/SYLVA PC/Desktop/CSC_506_Practicals/index.html",
+		"/C/Users/SYLVA PC/Downloads/educational.sql",
+		"/C/xampp/htdocs/Sunshine/admin/profile.php",
+		"/C/xampp/htdocs/Sunshine/admin/Models/Vehicle.class.php",
+		"/C/xampp/htdocs/Sunshine/admin/edit_vehicle.php",
+		"/C/xampp/htdocs/Sunshine/admin/controllers/vehicle_controller.php",
+		"/C/xampp/htdocs/Sunshine/admin/vehicles.php",
+		"/C/xampp/htdocs/Sunshine/admin/controllers/vehicle_handler.php",
+		"/C/xampp/htdocs/Sunshine/admin/vehicle_handler.php",
+		"/C/xampp/htdocs/Sunshine/admin/Models/Journey.class.php",
+		"/C/xampp/htdocs/Sunshine/admin/testing.php",
+		"/C/xampp/htdocs/Sunshine/admin/book_bus.php",
+		"/C/Users/SYLVA PC/Downloads/student.sql",
+		"/C/Users/SYLVA PC/Downloads/student (1).sql",
+		"/C/xampp/htdocs/EditableInvoice/index.php",
+		"/C/xampp/htdocs/Sunshine/admin/buses.php",
+		"/C/xampp/htdocs/nimc/myReference.php",
+		"/C/xampp/htdocs/Sunshine/admin/controllers/journey_controller.php",
+		"/C/xampp/htdocs/powercoop/finances/savings.php",
+		"/C/xampp/htdocs/SDAC/includes/footer.php",
+		"/C/xampp/htdocs/SDAC/includes/sidebar.php",
+		"/C/xampp/htdocs/Sunshine/admin/Models/CoveredRoutes.class.php",
+		"/C/xampp/htdocs/ims-online/include/footer.php",
+		"/C/xampp/htdocs/ims-online/include/side-nav.php",
+		"/C/xampp/htdocs/SDAC/viewMainOfferings.php",
+		"/C/xampp/htdocs/ims-online/include/header.php",
+		"/C/xampp/htdocs/ims-online/js/custom.js",
+		"/C/xampp/htdocs/EditableInvoice/css/print.css",
+		"/C/xampp/htdocs/SDAC/includes/header.php",
+		"/C/xampp/htdocs/SDAC/dist/js/demo.js",
+		"/C/xampp/htdocs/SDAC/libs/functions.php",
+		"/C/Users/SYLVA PC/Desktop/EditableInvoice/index.php",
+		"/C/xampp/htdocs/nimc/payment.php",
+		"/C/xampp/htdocs/CSC506/includes/connection.php",
+		"/C/Users/SYLVA PC/Desktop/phpres-code-r34-branches-new_template_system-install/index.php",
+		"/C/Users/SYLVA PC/Desktop/phpres-code-r34-branches-new_template_system-install/install.php",
+		"/C/xampp/htdocs/ims-online/admin.php",
+		"/C/xampp/htdocs/SDAC/admin.php",
+		"/C/xampp/htdocs/SDAC/main_offerings.php",
+		"/C/xampp/htdocs/SDAC/offerings.php",
+		"/C/xampp/htdocs/SDAC/offering.php",
+		"/C/Software_Projects/BusBookingApp/resources/js/components/buses/Payment.vue",
+		"/C/Software_Projects/BusBookingApp/resources/js/components/Journey.vue",
+		"/C/xampp/htdocs/powercoop/auth/consts.php",
+		"/C/xampp/htdocs/powercoop/finances/Finance_class.php",
+		"/C/xampp/htdocs/powercoop/finances/finance_handler.php",
+		"/C/xampp/htdocs/powercoop/finances/expense_handler.php",
+		"/C/xampp/htdocs/Sunshine/admin/Models/CoveredRoutes.php",
+		"/C/xampp/htdocs/Sunshine/admin/controllers/bus_types.php",
+		"/C/xampp/htdocs/CVMS/vehicles.php",
+		"/C/xampp/htdocs/CVMS/Models/Vehicle.class.php",
+		"/C/xampp/htdocs/Sunshine/admin/includes/config.php",
+		"/C/xampp/htdocs/CVMS/drivers.php",
+		"/C/xampp/htdocs/CVMS/index.php",
+		"/C/Software_Projects/BusBookingApp/resources/views/auth/register.blade.php",
+		"/C/xampp/htdocs/CVMS/manage-users.php",
+		"/C/xampp/htdocs/Travel-lite/admin/includes/header.php",
+		"/C/xampp/htdocs/Sunshine/admin/css/sb-admin-2.min.css",
+		"/C/Software_Projects/bus-ticket-system/readme.md",
+		"/C/Users/SYLVA PC/Desktop/monkey_patch.py",
+		"/C/Software_Projects/laravel-qrcode-ecommerce/.env",
+		"/C/Software_Projects/bus-ticket-system/.env",
+		"/C/Users/SYLVA PC/Downloads/vue development/Intro to Vue.js_ Components, Props, and Slots _ CSS-Tricks.html",
+		"/C/Software_Projects/laravel-qrcode-ecommerce/readme.md",
+		"/C/xampp/htdocs/Sunshine/admin/resetpass.php",
+		"/C/Software_Projects/BusBookingApp/resources/views/welcome.blade.php",
+		"/C/xampp/htdocs/CSC506/readme.txt",
+		"/C/xampp/htdocs/CSC506/register.php",
+		"/C/xampp/htdocs/CSC506/index.php",
+		"/C/xampp/htdocs/CSC506/includes/footer.php",
+		"/C/xampp/htdocs/CSC506/includes/inner_head.php",
+		"/C/xampp/htdocs/CSC506/profile.php",
+		"/C/xampp/htdocs/CSC506/readme.md",
+		"/C/xampp/htdocs/ims-online/adduser.php",
+		"/C/xampp/htdocs/SaviourAssembly/manager/functions.php",
+		"/C/xampp/htdocs/CSC506/assets/css/style.css",
+		"/C/xampp/htdocs/CSC506/login.php",
+		"/C/xampp/htdocs/CSC506/logout.php",
+		"/C/xampp/htdocs/CSC506/home.php",
+		"/C/Users/SYLVA PC/Documents/Files Preformat/Desktop/500L_First Semester/CSC507/CSC507_Multimedia_Technology/index.html",
+		"/C/Users/SYLVA PC/Documents/Files Preformat/Desktop/500L_First Semester/CSC507/CSC507_Multimedia_Technology/assets/css/style.css",
+		"/C/xampp/htdocs/powercoop/members/member_handler.php",
+		"/C/xampp/htdocs/DORIS/Category_class.php"
+	],
+	"find":
+	{
+		"height": 29.0
+	},
+	"find_in_files":
+	{
+		"height": 108.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 42.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "init.sublime-project",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Financ",
+				"Models\\Finance.class.php"
+			],
+			[
+				"finance",
+				"finances.php"
+			],
+			[
+				"ediv",
+				"edit_vehicle.php"
+			],
+			[
+				"driver_",
+				"driver_handler.php"
+			],
+			[
+				"dashboar",
+				"dashboard.php"
+			],
+			[
+				"profile",
+				"profile.php"
+			],
+			[
+				"sb-admin",
+				"css\\sb-admin-2.min.css"
+			],
+			[
+				"sb-ad",
+				"css\\sb-admin-2.css"
+			],
+			[
+				"header",
+				"admin\\includes\\header.php"
+			],
+			[
+				"reci",
+				"admin\\reciept.php"
+			],
+			[
+				"giv",
+				"admin\\give-feedback.php"
+			],
+			[
+				"inner",
+				"admin\\includes\\inner-header.php"
+			],
+			[
+				"register",
+				"register.php"
+			],
+			[
+				"cus",
+				"customer_controller.php"
+			],
+			[
+				"das",
+				"admin\\dashboard.php"
+			],
+			[
+				"inde",
+				"index.php"
+			],
+			[
+				"manage",
+				"admin\\manage-booking.php"
+			],
+			[
+				"mana",
+				"admin\\manage-users.php"
+			],
+			[
+				"vehic",
+				"admin\\vehicle_handler.php"
+			],
+			[
+				"profil",
+				"admin\\profile.php"
+			],
+			[
+				"testing",
+				"admin\\testing.php"
+			],
+			[
+				"dash",
+				"admin\\dashboard.php"
+			],
+			[
+				"vehicle.",
+				"admin\\Models\\Vehicle.class.php"
+			],
+			[
+				"dash ",
+				"Sunshine\\admin\\dashboard.php"
+			],
+			[
+				"log",
+				"Sunshine\\admin\\logout.php"
+			],
+			[
+				"index",
+				"Sunshine\\index.php"
+			],
+			[
+				"sba",
+				"admin\\css\\sb-admin-2.min.css"
+			],
+			[
+				"sb-",
+				"admin\\css\\sb-admin-2.css"
+			],
+			[
+				"connec",
+				"CSC506\\includes\\connection.php"
+			],
+			[
+				"font",
+				"CSC506\\assets\\css\\font.css"
+			],
+			[
+				"head",
+				"CSC506\\includes\\head.php"
+			],
+			[
+				"init",
+				"CVMS\\includes\\init.php"
+			],
+			[
+				"function",
+				"CVMS\\includes\\functions.php"
+			],
+			[
+				"inne",
+				"CVMS\\includes\\inner-header.php"
+			],
+			[
+				"user",
+				"SDAC\\user.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 260.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

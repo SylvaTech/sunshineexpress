@@ -1,6 +1,37 @@
 <?php
   class Booking
   {
+  	function getAllBookings(){
+    	global $con;
+    	$query = "SELECT booking_details.passenger_name,booking_details.journey_date,booking_details.created_at,booking_details.seat_no, sunshine_journeys.from_destination, sunshine_journeys.to_destination,sunshine_journeys.departure_time, sunshine_journeys.fare,sunshine_bus_types.BusType FROM booking_details INNER JOIN sunshine_journeys ON booking_details.journey_id = sunshine_journeys.j_id INNER JOIN sunshine_bus_types ON sunshine_journeys.bus_type = sunshine_bus_types.bt_id";
+    	try{
+	        $stmt = $con->prepare($query);
+	        if($stmt->execute()){
+		        $details = $stmt->fetchAll();
+		    }
+	        	        
+	        return $details;
+	    }
+	    catch(Exception $e){
+	    	echo $e->getMessage();
+	    }
+    }
+    function getAllUserBookings($userId){
+    	global $con;
+    	$query = "SELECT booking_details.booking_id,booking_details.passenger_name,booking_details.journey_date,booking_details.created_at,booking_details.seat_no, sunshine_journeys.from_destination, sunshine_journeys.to_destination,sunshine_journeys.departure_time, sunshine_journeys.fare,sunshine_bus_types.BusType FROM booking_details INNER JOIN sunshine_journeys ON booking_details.journey_id = sunshine_journeys.j_id INNER JOIN sunshine_bus_types ON sunshine_journeys.bus_type = sunshine_bus_types.bt_id WHERE booking_details.booked_by = :userId";
+    	try{
+	        $stmt = $con->prepare($query);
+	        $stmt->bindValue(':userId',$userId);
+	        if($stmt->execute()){
+		        $details = $stmt->fetchAll();
+		    }
+	        	        
+	        return $details;
+	    }
+	    catch(Exception $e){
+	    	echo $e->getMessage();
+	    }
+    }
     //Get Available Seats for a journey
     function getBookedSeats($j_id,$j_date){
     	global $con;
@@ -35,11 +66,13 @@
     /*Save booking details before proceeding to payment*/
     function saveBookingDetails($bookingId, $pName,$pGender,$pPhone,$pAddress,$trxnEmail,$nokName,$nokPhone,$nokAddress,$jId,$jDate,$seatNo,$paymentStatus,$createdAt){
     	global $con;
-    	$query = ("INSERT INTO booking_details(booking_id,passenger_name,gender,phone,address,email,nok_name,nok_phone,nok_address,journey_id,journey_date,seat_no,payment_status,created_at) VALUES(:booking_id,:passenger_name,:gender,:phone,:address,:email,:nok_name,:nok_phone,:nok_address,:journey_id,:journey_date,:seat_no,:payment_status,:created_at)");
+    	$booked_by = $_SESSION['id'];
+    	$query = ("INSERT INTO booking_details(booking_id,booked_by,passenger_name,gender,phone,address,email,nok_name,nok_phone,nok_address,journey_id,journey_date,seat_no,payment_status,created_at) VALUES(:booking_id,:booked_by,:passenger_name,:gender,:phone,:address,:email,:nok_name,:nok_phone,:nok_address,:journey_id,:journey_date,:seat_no,:payment_status,:created_at)");
     	try{
 			$stmt = $con->prepare($query);
 
 			$stmt->bindValue(":booking_id", $bookingId);
+			$stmt->bindValue(":booked_by", $booked_by);
 			$stmt->bindValue(":passenger_name", $pName);
 			$stmt->bindValue(":gender", $pGender);
 			$stmt->bindValue(":phone", $pPhone);
