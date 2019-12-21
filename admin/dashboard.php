@@ -185,7 +185,6 @@
                       <td><?php echo $arrival; ?></td>
                       <td><?php echo $fare; ?></td>
                       <td><a class="btn btn-success" href="book_bus.php?j=<?php echo $id;?>">Book</a></td>
-                      <!-- <td><button class="btn btn-success" data-toggle="modal" data-target="#myModal">Book</button></td> -->
                     </tr>
                     <?php
                         }

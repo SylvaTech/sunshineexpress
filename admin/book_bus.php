@@ -70,7 +70,7 @@ if(isset($_GET['j'])){
               <input type="number" minlength="11" maxlength="11" class="form-control form-control-user" name="nok_phone" placeholder="Next of kin's Phone number" required>
             </div>
             <div class="form-group">
-              <span>Passenger Address:</span>
+              <span>Next of Kin's Address:</span>
               <input type="text" class="form-control form-control-user" name="nok_address" placeholder="Next of Kin's Address" required>
             </div>
           </div>

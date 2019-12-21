@@ -64,7 +64,11 @@
              }
           ?> 
 		</div>
+	</div>
+		<div class = "row">
+		<div class="col-md-4"></div>
 		<div class="col-md-4">
+
 		    <div class="header-right">
 		        <h4 class="text-white pb-30">Register Today!</h4>
 		    						    
@@ -102,6 +106,7 @@
 				</form>
 			</div>
 		</div>
+	</div>
 		<div class="footer">
 			<script src="js/vendor/jquery-2.2.4.min.js"></script>
   			<script src="js/vendor/bootstrap.min.js"></script>
